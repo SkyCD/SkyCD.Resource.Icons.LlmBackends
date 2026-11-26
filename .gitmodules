@@ -1,0 +1,9 @@
+[submodule "upstream/colibri"]
+	path = upstream/colibri
+	url = https://github.com/JustVugg/colibri.git
+[submodule "upstream/jan"]
+	path = upstream/jan
+	url = https://github.com/janhq/jan.git
+[submodule "upstream/ollama"]
+	path = upstream/ollama
+	url = https://github.com/ollama/ollama.git
