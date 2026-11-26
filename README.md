@@ -13,11 +13,11 @@ Apps can share the same backend artwork without maintaining their own copies. Ea
 
 | Backend | Upstream artwork |
 | --- | --- |
-| Colibrì | [Desktop application icon](https://github.com/JustVugg/colibri/blob/e479104ae01bdc40ce81e675299b1d230891b321/desktop/src-tauri/icons/128x128.png) |
-| Jan | [Desktop application icon](https://github.com/janhq/jan/blob/49a84bdeaebdfc0f36c00f252eb638f516a48432/src-tauri/icons/icon.png) |
-| Ollama | [Documentation favicon](https://github.com/ollama/ollama/blob/8ae8acb81afba9c3c67adf08190964eb7d1207ef/docs/images/favicon.png) |
-| llama.cpp | [Earlier server favicon](https://github.com/ggml-org/llama.cpp/blob/296901983700f3c37449bcb555d85d27150a679d/examples/server/public_legacy/favicon.ico) |
-| vLLM | [Documentation logo](https://github.com/vllm-project/vllm/blob/f9d1824a770f01e681fef8adb4b4bbe506e080aa/docs/assets/logos/vllm-logo-only-light.png) |
+| Colibrì | <a href="https://github.com/JustVugg/colibri/blob/e479104ae01bdc40ce81e675299b1d230891b321/desktop/src-tauri/icons/128x128.png"><img src="https://raw.githubusercontent.com/JustVugg/colibri/e479104ae01bdc40ce81e675299b1d230891b321/desktop/src-tauri/icons/128x128.png" width="32" height="32" alt="Colibrì desktop application icon"></a> |
+| Jan | <a href="https://github.com/janhq/jan/blob/49a84bdeaebdfc0f36c00f252eb638f516a48432/src-tauri/icons/icon.png"><img src="https://raw.githubusercontent.com/janhq/jan/49a84bdeaebdfc0f36c00f252eb638f516a48432/src-tauri/icons/icon.png" width="32" height="32" alt="Jan desktop application icon"></a> |
+| Ollama | <a href="https://github.com/ollama/ollama/blob/8ae8acb81afba9c3c67adf08190964eb7d1207ef/docs/images/favicon.png"><img src="https://raw.githubusercontent.com/ollama/ollama/8ae8acb81afba9c3c67adf08190964eb7d1207ef/docs/images/favicon.png" width="32" height="32" alt="Ollama documentation favicon"></a> |
+| llama.cpp | <a href="https://github.com/ggml-org/llama.cpp/blob/296901983700f3c37449bcb555d85d27150a679d/examples/server/public_legacy/favicon.ico"><img src="https://raw.githubusercontent.com/ggml-org/llama.cpp/296901983700f3c37449bcb555d85d27150a679d/examples/server/public_legacy/favicon.ico" width="32" height="32" alt="llama.cpp earlier server favicon"></a> |
+| vLLM | <a href="https://github.com/vllm-project/vllm/blob/f9d1824a770f01e681fef8adb4b4bbe506e080aa/docs/assets/logos/vllm-logo-only-light.png"><img src="https://raw.githubusercontent.com/vllm-project/vllm/f9d1824a770f01e681fef8adb4b4bbe506e080aa/docs/assets/logos/vllm-logo-only-light.png" width="32" height="32" alt="vLLM documentation logo"></a> |
 
 ## Install from GitHub Packages
 
