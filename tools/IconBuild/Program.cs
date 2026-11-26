@@ -8,7 +8,9 @@ int[] sizes = [16, 24, 32, 48, 64, 128, 256];
 [
     ("colibri", "colibri/desktop/src-tauri/icons/128x128.png"),
     ("jan", "jan/src-tauri/icons/icon.png"),
-    ("ollama", "ollama/docs/images/favicon.png")
+    ("ollama", "ollama/docs/images/favicon.png"),
+    ("llamacpp", "llamacpp/examples/server/public_legacy/favicon.ico"),
+    ("vllm", "vllm/docs/assets/logos/vllm-logo-only-light.png")
 ];
 
 if (args is ["generate", var upstream, var output])

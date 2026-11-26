@@ -7,3 +7,9 @@
 [submodule "upstream/ollama"]
 	path = upstream/ollama
 	url = https://github.com/ollama/ollama.git
+[submodule "upstream/llamacpp"]
+	path = upstream/llamacpp
+	url = https://github.com/ggml-org/llama.cpp.git
+[submodule "upstream/vllm"]
+	path = upstream/vllm
+	url = https://github.com/vllm-project/vllm.git

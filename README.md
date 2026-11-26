@@ -9,13 +9,15 @@ Multi-resolution icons for local AI backends, packaged as a small .NET library. 
 
 ## Why this exists
 
-Apps can share the same backend artwork without maintaining their own copies. Each icon is generated from an upstream PNG pinned by a Git submodule. The library embeds seven sizes per icon: 16, 24, 32, 48, 64, 128, and 256 px.
+Apps can share the same backend artwork without maintaining their own copies. Each icon is generated from an upstream image pinned by a Git submodule. The library embeds seven sizes per icon: 16, 24, 32, 48, 64, 128, and 256 px.
 
 | Backend | Upstream artwork |
 | --- | --- |
 | Colibrì | [Desktop application icon](https://github.com/JustVugg/colibri/blob/e479104ae01bdc40ce81e675299b1d230891b321/desktop/src-tauri/icons/128x128.png) |
 | Jan | [Desktop application icon](https://github.com/janhq/jan/blob/49a84bdeaebdfc0f36c00f252eb638f516a48432/src-tauri/icons/icon.png) |
 | Ollama | [Documentation favicon](https://github.com/ollama/ollama/blob/8ae8acb81afba9c3c67adf08190964eb7d1207ef/docs/images/favicon.png) |
+| llama.cpp | [Earlier server favicon](https://github.com/ggml-org/llama.cpp/blob/296901983700f3c37449bcb555d85d27150a679d/examples/server/public_legacy/favicon.ico) |
+| vLLM | [Documentation logo](https://github.com/vllm-project/vllm/blob/f9d1824a770f01e681fef8adb4b4bbe506e080aa/docs/assets/logos/vllm-logo-only-light.png) |
 
 ## Install from GitHub Packages
 
@@ -51,11 +53,11 @@ Use the .NET 10 SDK and initialize the upstream submodules.
 ```sh
 git submodule update --init
 dotnet build SkyCD.Resource.Icons.LlmBackends.csproj -c Release
-dotnet pack SkyCD.Resource.Icons.LlmBackends.csproj -c Release --no-build -p:PackageVersion=0.1.1 -o artifacts
-dotnet run --project tools/IconBuild -c Release --no-build -- verify artifacts/SkyCD.Resource.Icons.LlmBackends.0.1.1.nupkg
+dotnet pack SkyCD.Resource.Icons.LlmBackends.csproj -c Release --no-build -p:PackageVersion=0.2.0 -o artifacts
+dotnet run --project tools/IconBuild -c Release --no-build -- verify artifacts/SkyCD.Resource.Icons.LlmBackends.0.2.0.nupkg
 ```
 
-MSBuild runs the .NET icon generator during the build. SkiaSharp is used by the build tool; the NuGet package contains the portable DLL, documentation, and license notices. CI publishes a version when a matching tag such as `v0.1.1` is pushed from `main`.
+MSBuild runs the .NET icon generator during the build. SkiaSharp is used by the build tool; the NuGet package contains the portable DLL, documentation, and license notices. CI publishes a version when a matching tag such as `v0.2.0` is pushed from `main`.
 
 ## Licenses
 

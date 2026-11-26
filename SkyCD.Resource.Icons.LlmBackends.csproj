@@ -19,6 +19,8 @@
     <None Include="upstream/colibri/LICENSE;upstream/colibri/NOTICE" Pack="true" PackagePath="licenses/colibri/" />
     <None Include="upstream/jan/LICENSE" Pack="true" PackagePath="licenses/jan/" />
     <None Include="upstream/ollama/LICENSE" Pack="true" PackagePath="licenses/ollama/" />
+    <None Include="upstream/llamacpp/LICENSE" Pack="true" PackagePath="licenses/llamacpp/" />
+    <None Include="upstream/vllm/LICENSE" Pack="true" PackagePath="licenses/vllm/" />
   </ItemGroup>
   <Target Name="GenerateBackendIcons" BeforeTargets="AssignTargetPaths" DependsOnTargets="ResolveProjectReferences" Condition="'$(DesignTimeBuild)' != 'true'">
     <MSBuild Projects="tools/IconBuild/IconBuild.csproj" Targets="GetTargetPath" Properties="Configuration=$(Configuration)" RemoveProperties="TargetFramework;PackageVersion">
@@ -29,6 +31,8 @@
       <EmbeddedResource Include="$(IntermediateOutputPath)icons/colibri.ico" LogicalName="Icons.colibri.ico" />
       <EmbeddedResource Include="$(IntermediateOutputPath)icons/jan.ico" LogicalName="Icons.jan.ico" />
       <EmbeddedResource Include="$(IntermediateOutputPath)icons/ollama.ico" LogicalName="Icons.ollama.ico" />
+      <EmbeddedResource Include="$(IntermediateOutputPath)icons/llamacpp.ico" LogicalName="Icons.llamacpp.ico" />
+      <EmbeddedResource Include="$(IntermediateOutputPath)icons/vllm.ico" LogicalName="Icons.vllm.ico" />
     </ItemGroup>
   </Target>
 </Project>
