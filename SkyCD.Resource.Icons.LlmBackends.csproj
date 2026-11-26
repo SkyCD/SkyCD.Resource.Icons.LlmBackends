@@ -1,25 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>10.0</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <DefaultItemExcludes>$(DefaultItemExcludes);upstream/**</DefaultItemExcludes>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <DefaultItemExcludes>$(DefaultItemExcludes);upstream/**;tools/**</DefaultItemExcludes>
     <Authors>SkyCD contributors</Authors>
     <Description>Multi-resolution icons for identifying local LLM backends.</Description>
     <RepositoryUrl>https://github.com/SkyCD/SkyCD.Resource.Icons.LlmBackends</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT AND Apache-2.0</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PythonCommand Condition="'$(PythonCommand)' == ''">python</PythonCommand>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="tools/IconBuild/IconBuild.csproj" ReferenceOutputAssembly="false" PrivateAssets="all" SkipGetTargetFrameworkProperties="true" GlobalPropertiesToRemove="TargetFramework" />
     <None Update="README.md;LICENSE;THIRD-PARTY-NOTICES.md" Pack="true" PackagePath="/" />
     <None Include="upstream/colibri/LICENSE;upstream/colibri/NOTICE" Pack="true" PackagePath="licenses/colibri/" />
     <None Include="upstream/jan/LICENSE" Pack="true" PackagePath="licenses/jan/" />
     <None Include="upstream/ollama/LICENSE" Pack="true" PackagePath="licenses/ollama/" />
   </ItemGroup>
-  <Target Name="GenerateBackendIcons" BeforeTargets="PrepareForBuild">
-    <Exec Command="&quot;$(PythonCommand)&quot; &quot;$(MSBuildProjectDirectory)/generate_icons.py&quot; &quot;$(IntermediateOutputPath)icons&quot;" />
+  <Target Name="GenerateBackendIcons" BeforeTargets="AssignTargetPaths" DependsOnTargets="ResolveProjectReferences" Condition="'$(DesignTimeBuild)' != 'true'">
+    <MSBuild Projects="tools/IconBuild/IconBuild.csproj" Targets="GetTargetPath" Properties="Configuration=$(Configuration)" RemoveProperties="TargetFramework;PackageVersion">
+      <Output TaskParameter="TargetOutputs" ItemName="IconBuildAssembly" />
+    </MSBuild>
+    <Exec Command="dotnet &quot;@(IconBuildAssembly)&quot; generate &quot;$(MSBuildProjectDirectory)/upstream&quot; &quot;$(IntermediateOutputPath)icons&quot;" />
     <ItemGroup>
       <EmbeddedResource Include="$(IntermediateOutputPath)icons/colibri.ico" LogicalName="Icons.colibri.ico" />
       <EmbeddedResource Include="$(IntermediateOutputPath)icons/jan.ico" LogicalName="Icons.jan.ico" />
